@@ -1,0 +1,7 @@
+menu "ADS1115 driver configuration"
+
+    config ADS1115_I2C_TIMEOUT
+        int "The timeout value (in milliseconds) for all I2C operations performed by the driver."
+        default 10
+
+endmenu
