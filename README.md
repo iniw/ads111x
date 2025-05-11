@@ -3,7 +3,6 @@ Just place this repository in your project's `components/` directory and then ad
 
 ```cmake
 # main/CMakeLists.txt
-
 idf_component_register(
     SRCS
         main.cpp
@@ -83,7 +82,7 @@ if (!conversion_or_error.has_value()) {
     // Handle error
 }
 
-// We set the PGA to gives us a full-scale-range of 4.096V, so our digital reading will be relative to that scale.
+// We set the PGA to give us a full-scale-range of 4.096V, so our digital reading will be relative to that scale.
 float a0_voltage = 4.096f * (static_cast<float>(conversion_or_error->d) / INT16_MAX);
 ESP_LOGI("Example", "Voltage in A0 = %f", a0_voltage);
 ```
@@ -162,7 +161,7 @@ auto conversion = ads111x::read<Conversion>(device_handle).value();
 auto another_conversion = ads111x::read<Conversion>(device_handle).value();
 
 // ads111x::write(
-//     *handle_or_error,
+//     device_handle,
 //     AddressPointer {
 //         .p = AddressPointer::Register::Config,
 //     });
@@ -187,7 +186,7 @@ auto conversion = ads111x::read<Conversion>(device_handle).value();
 ads111x::write(device_handle, Config {});
 
 // ads111x::write(
-//     *handle_or_error,
+//     device_handle,
 //     AddressPointer {
 //         .p = AddressPointer::Register::Conversion,
 //     });
