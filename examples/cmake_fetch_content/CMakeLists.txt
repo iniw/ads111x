@@ -10,6 +10,7 @@ FetchContent_Declare(
     ads111x
     SOURCE_DIR     ${CMAKE_SOURCE_DIR}/components/ads111x/
     GIT_REPOSITORY https://github.com/iniw/ads111x.git
+    GIT_TAG        1.0.0
     GIT_PROGRESS   TRUE
     GIT_SHALLOW    TRUE
     # See: https://discourse.cmake.org/t/prevent-fetchcontent-makeavailable-to-execute-cmakelists-txt/12704/12
